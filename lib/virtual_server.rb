@@ -6,8 +6,8 @@ Excon.ssl_verify_peer = false
 class VirtualServer
 	def initialize(image)
 		@compute = Fog::Compute.new(
-			:provider				=> 'AWS',
-			:aws_access_key_id		=> 'AKIAIDNLXJR57FAVC4FQ',
+			:provider			        	=> 'AWS',
+			:aws_access_key_id	   	=> 'AKIAIDNLXJR57FAVC4FQ',
 			:aws_secret_access_key	=> '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'
 		)
 		@server = @compute.servers.create(:image_id => image, :flavor_id=> 't2.micro', :name => 'my_server')
