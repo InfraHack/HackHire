@@ -1,0 +1,10 @@
+"scenarios": [
+    {
+        "id": 1,
+        "tags": [
+            "configuration management"
+        ],
+        "narrative": "Write the code to deploy a WordPress blog on the platform of your choice. Your code should result in a repeatable deployment of WordPress and all it's dependencies. Your webserver should run on port 80.",
+        "test_command": "rspec /var/lib/scenarios/wordpress/spec/scenario_spec.rb"
+    }
+]
