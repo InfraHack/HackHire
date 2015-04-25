@@ -48,10 +48,10 @@
     "id": 4,
     "prompt": "T/F: The Linux kernel is monlithic.",
     "incorrect": [
-      true
+      "true"
     ],
     "correct": [
-      false
+      "false"
     ]
   },
   {
