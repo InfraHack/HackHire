@@ -7,7 +7,7 @@ $ ->
     e.preventDefault()
     target = $(e.target)
     checked = $(':checked', "form##{target.attr('id')}")
-    all = $("form##{target.attr('id')}")
+    all = $("form##{target.attr('id')} input[type='checkbox']")
     choices = _.map(all, (item) ->
       $(item).val()
     )
