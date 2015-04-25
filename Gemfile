@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'underscore-rails'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

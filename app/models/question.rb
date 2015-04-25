@@ -8,7 +8,7 @@ class Question < SimpleDelegator
     return @choices if @choices
     @choices = correct + incorrect
     @choices.shuffle!
-    @choices
+    @choices = @choices[0..3]
   end
 
   %w(correct incorrect id prompt).each do |method_name|

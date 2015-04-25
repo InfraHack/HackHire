@@ -7,6 +7,6 @@
     %ul.question
       - question.choices.each_with_index do |choice, i|
         %li.choice
-          = radio_button_tag 'answer', choice
-          = label_tag 'answer', choice
+          = check_box_tag "answer_#{i}", choice
+          = label_tag "answer_#{i}", choice
     = submit_tag 'Save'

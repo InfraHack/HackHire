@@ -13,8 +13,11 @@ class QuestionsController < ApplicationController
 
   def answer
     @answer = {}
-    @answer['content'] = params['answer']
-    @answer['correct'] = @question['correct'].include? params['answer']
+    render :ok, json: { 'content' => [], 'correct' => false } if params['answers'].empty?
+    @answer['content'] = params['answers']
+    correct_options = params['choices'] && @question['correct']
+    @answer['correct'] = correct_options.sort == params['answers'].sort
+
     render :ok, json: @answer and return
   end
 end

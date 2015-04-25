@@ -3,22 +3,26 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  console.log 'ready'
   $('form').on('submit', (e) ->
     e.preventDefault()
     target = $(e.target)
-    answer = $(':checked', "form##{target.attr('id')}").val()
-    $.ajax(url: target.attr('action'), data: { answer: answer }, type: 'post', success: (result) ->
+    checked = $(':checked', "form##{target.attr('id')}")
+    all = $("form##{target.attr('id')}")
+    choices = _.map(all, (item) ->
+      $(item).val()
+    )
+    answers = _.map(checked, (item) ->
+      $(item).val()
+    )
+    $.ajax(url: target.attr('action'), data: { answers: answers, choices: choices }, type: 'post', success: (result) ->
       display = $(target.siblings('.display')[0])
-      console.log display
       if result['correct']
-        console.log 'correct'
         display.text('Correct')
         display.addClass('correct')
+        display.removeClass('incorrect')
       else
-        console.log 'incorrect'
         display.text('Incorrect')
         display.addClass('incorrect')
+        display.removeClass('correct')
     )
   )
-
