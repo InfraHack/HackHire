@@ -6,9 +6,8 @@ Excon.ssl_verify_peer = false
 class VirtualServer
 	def initialize(image)
 		images = {'redhat' => 'ami-12663b7a', 'ubuntu' => 'ami-d05e75b8'}
-		Fog.mock!
 		@compute = Fog::Compute.new(
-			:provider	            	=> 'AWS',
+			:provider	      	=> 'AWS',
 			:aws_access_key_id    	=> 'AKIAIDNLXJR57FAVC4FQ',
 			:aws_secret_access_key	=> '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'
 		)
