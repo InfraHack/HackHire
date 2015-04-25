@@ -1,3 +1,7 @@
 @import '*';
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "geo-bootstrap";
+
+.hidden {
+  display: none;
+}
