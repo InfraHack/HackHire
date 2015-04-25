@@ -1,10 +1,1 @@
-%h1 Question ##{@question['id']}
-%h5= @question['prompt']
-= form_tag "/questions/#{@question['id']}/answer" do
-  = hidden_field_tag 'id', @question['id']
-  %ul.question
-    - @question['choices'].each_with_index do |choice, i|
-      %li.choice
-        = radio_button_tag 'answer', choice
-        = label_tag 'answer', choice
-  = submit_tag 'Save'
+= render 'quiz_entry', locals: { question: question }
