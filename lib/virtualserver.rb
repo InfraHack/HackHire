@@ -3,7 +3,7 @@ require 'rubygems'
 require 'excon'
 Excon.ssl_verify_peer = false
 
-class HackHireServer
+class VirtualServer
 	def initialize(image)
 		images = {'redhat' => 'ami-12663b7a', 'ubuntu' => 'ami-d05e75b8'}
 		
