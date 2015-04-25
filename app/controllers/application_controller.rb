@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
 
     Dir[Rails.root.join('data', 'questions', '*.json')].each do |question|
       json = JSON.parse File.read(question)
-      @data['questions'][json['id']] = json
+      if json.is_a? Array
+        json.each { |entry| @data['questions'][entry['id']] = entry }
+      else
+        @data['questions'][json['id']] = json
+      end
     end
 
     Dir[Rails.root.join('data', 'quizes', '*.json')].each do |question|
