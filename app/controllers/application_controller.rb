@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_data
 
   def set_data
-    @data = {'questions' => {}, 'quizes' => {}}
+    @data = {'questions' => {}, 'quizes' => {}, 'scenarios' => {}}
 
     Dir[Rails.root.join('data', 'questions', '*.json')].each do |question|
       json = JSON.parse File.read(question)
@@ -20,6 +20,15 @@ class ApplicationController < ActionController::Base
     Dir[Rails.root.join('data', 'quizes', '*.json')].each do |question|
       json = JSON.parse File.read(question)
       @data['quizes'][json['id']] = json
+    end
+
+    Dir[Rails.root.join('data', 'scenarios', '*.json')].each do |question|
+      json = JSON.parse File.read(question)
+      if json.is_a? Array
+        json.each { |scenario| @data['scenarios'][scenario['id']] = scenario }
+      else
+        @data['scenarios'][json['id']] = json
+      end
     end
   end
 

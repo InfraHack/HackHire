@@ -1,10 +1,10 @@
-"scenarios": [
+[
     {
         "id": 1,
         "scenario": "Write the code to deploy a WordPress blog on the platform of your choice. Your code should result in a repeatable deployment of WordPress and all it's dependencies. Your webserver should run on port 80.",
         "platforms": {
             "ubuntu": "ami-f09157f0",
-            "centos": "ami-96a818fe",
+            "centos": "ami-96a818fe"
         },
         "hooks": {
             "pre": "puppet apply /var/lib/scenarios/wordpress/manifests/setup.pp",

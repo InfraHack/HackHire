@@ -1,0 +1,8 @@
+%h1 Scenario ##{@scenario['id']}
+%h5= @scenario['scenario']
+
+.before
+  %button.start I wanna fix this!
+.after.hidden
+  .message
+  %button.finished I am victorious!

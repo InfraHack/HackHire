@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'fog'
 gem 'underscore-rails'
 gem 'bootstrap-sass'
 gem 'haml-rails'
