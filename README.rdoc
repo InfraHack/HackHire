@@ -1,3 +1,9 @@
+==Website
+
+[HackHire](http://infrahack.github.io/HackHire/)
+
+This is just a starting sample static website. 
+
 == README
 
 This README would normally document whatever steps are necessary to get the
